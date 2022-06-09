@@ -1,0 +1,65 @@
+@font-face {
+  font-family: "font-1";
+  src: url(../assets/fonts/static/Montserrat-Regular.ttf);
+}
+
+@font-face {
+  font-family: "font-2";
+  src: url(../assets/fonts/static/Montserrat-Medium.ttf);
+}
+
+@font-face {
+  font-family: "font-3";
+  src: url(../assets/fonts/static/Montserrat-Bold.ttf);
+}
+
+
+$font-1: "font-1",
+sans-serif;
+
+$font-2: "font-2";
+
+
+$font-3: "font-3",
+sans-serif;
+
+$color-1: #FF6060;
+
+$color-2: #FFFFFF;
+
+$color-3: #282c34;
+
+$color-4:#F7F7F7;
+
+$width-home : 100%;
+
+
+@mixin verticalCenter {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  flex-direction: row;
+  width: $width-home;
+  margin-left: auto;
+  margin-right: auto;
+  font-family: $font-1;
+}
+
+li {
+  list-style-type: none;
+}
+
+#root {
+  width: $width-home;
+  position: relative;
+}

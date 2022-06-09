@@ -1,0 +1,20 @@
+.horizontal-navigation{display :flex;
+
+flex-direction: row;
+height : 95px;
+color: #FFF;
+
+background-color: black;
+
+ul{padding-left: 200px;
+    display : flex;
+    flex-direction: row;
+    justify-content: space-around;
+    column-gap: 100px;
+
+    li{color: #FFF;
+        font-size: 25px;}
+    }
+
+}
+
