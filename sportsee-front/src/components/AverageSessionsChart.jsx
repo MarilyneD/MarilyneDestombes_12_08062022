@@ -9,7 +9,7 @@ const AverageSessionsChart = ({averagesessions}) => {
     return (
        
         <ResponsiveContainer className=
-        "sessions" width="100%" aspect={3}>
+        "sessions" width="100%" aspect={1}>
         <LineChart
           width={500}
           height={300}
