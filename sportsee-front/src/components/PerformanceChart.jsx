@@ -7,10 +7,10 @@ import { Radar, RadarChart, PolarGrid, PolarAngleAxis, PolarRadiusAxis, Responsi
 const PerformanceChart = ({performance}) => {
 
   const [performanceNew, setPerformanceNew] = useState(performance.data.map((item,index)=> item.kind = performance.kind[index+1] ));
-  console.log("performanceNew",performanceNew)
+  //console.log("performanceNew",performanceNew)
   
 
-
+  
 
   performance.data.map((item,index)=> item.kind = performance.kind[index+1] )
 
