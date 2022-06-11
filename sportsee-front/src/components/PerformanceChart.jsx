@@ -6,13 +6,13 @@ import { Radar, RadarChart, PolarGrid, PolarAngleAxis, PolarRadiusAxis, Responsi
 
 const PerformanceChart = ({performance}) => {
 
-  const [performanceNew, setPerformanceNew] = useState(performance.data.map((item,index)=> item.kind = performance.kind[index+1] ));
+  //const [performanceNew, setPerformanceNew] = useState(performance.data.map((item,index)=> item.kind = performance.kind[index+1] ));
   //console.log("performanceNew",performanceNew)
   
 
-  
+  const performanceNames = ['Cardio', 'Energie', 'Endurance', 'Force', 'Vitesse', 'Intensité']
 
-  performance.data.map((item,index)=> item.kind = performance.kind[index+1] )
+  performance.data.map((item,index)=> item.kind = performanceNames[index] )
 
     return (
         

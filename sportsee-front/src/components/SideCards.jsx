@@ -1,21 +1,16 @@
 import React from 'react';
 import Card from './Card';
 
-const SideCards = ({keydata}) => {
-    console.log("Object.entries(keydata)",Object.entries(keydata))
-    
-    return (
-        <ul className='sidecards'>
-           
-        {Object.entries(keydata).map((item, index) => (
-          <Card item={item} index={index} />
-        ))}
-    
+const SideCards = ({ keydata }) => {
+  console.log("Object.entries(keydata)", Object.entries(keydata));
 
-
-            
-        </ul>
-    );
+  return (
+    <ul className="sidecards">
+      {Object.entries(keydata).map((item, index) => (
+        <Card item={item} index={index} />
+      ))}
+    </ul>
+  );
 };
 
 export default SideCards;
