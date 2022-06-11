@@ -74,7 +74,7 @@ const User = () => {
   }
   return (
     <div className="user-container">
-      Bonjour {mainData.userInfos.firstName}
+      <div className="hello"> Bonjour {mainData.userInfos.firstName}</div>
       <div className="charts-container">
         <ActivityChart activity={activity} />
         <AverageSessionsChart averagesessions={averagesessions} />

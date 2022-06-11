@@ -1,6 +1,6 @@
 
-import React, { PureComponent } from 'react';
-import { useState } from 'react';
+import React from 'react';
+//import { useState } from 'react';
 import { Radar, RadarChart, PolarGrid, PolarAngleAxis, PolarRadiusAxis, ResponsiveContainer } from 'recharts';
 
 
@@ -16,12 +16,12 @@ const PerformanceChart = ({performance}) => {
 
     return (
         
-      <ResponsiveContainer className="performance" width="100%" aspect={1}>
+      <ResponsiveContainer className="performance" width="100%" aspect={1.5}>
       <RadarChart cx="50%" cy="50%" outerRadius="80%" data={performance.data}>
         <PolarGrid />
         <PolarAngleAxis dataKey="kind" />
         <PolarRadiusAxis />
-        <Radar name="" dataKey="value" stroke="#8884d8" fill="#8884d8" fillOpacity={0.6} />
+        <Radar name="" dataKey="value" stroke="#E60000" fill="#E60000" fillOpacity={0.6} />
       </RadarChart>
     </ResponsiveContainer>
 

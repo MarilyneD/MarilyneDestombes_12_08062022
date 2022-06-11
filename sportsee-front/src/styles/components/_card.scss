@@ -1,0 +1,11 @@
+.card{ display: flex;
+ 
+
+flex-direction: row;
+padding-left: 40px;
+background-color: $color-3;
+border-radius: 5px;
+
+.card-text{ padding-left: 40px;@include verticalCenter}
+
+}

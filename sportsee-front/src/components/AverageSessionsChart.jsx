@@ -1,4 +1,4 @@
-import React, { PureComponent } from 'react';
+import React from 'react';
 import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts';
 
 const AverageSessionsChart = ({averagesessions}) => {
@@ -9,7 +9,7 @@ const AverageSessionsChart = ({averagesessions}) => {
     return (
        
         <ResponsiveContainer className=
-        "sessions" width="100%" aspect={1}>
+        "sessions" width="100%" aspect={1.5}>
         <LineChart
           width={500}
           height={300}
@@ -18,15 +18,15 @@ const AverageSessionsChart = ({averagesessions}) => {
             top: 5,
             right: 30,
             left: 20,
-            bottom: 5,
+            bottom: 0,
           }}
         >
-          <CartesianGrid strokeDasharray="3 3" />
+          <CartesianGrid strokeDasharray="3 3" horizontal={false} vertical={false} />
           <XAxis dataKey="day" />
           <YAxis />
           <Tooltip />
           <Legend />
-          <Line type="monotone" dataKey="sessionLength" stroke="#8884d8" activeDot={{ r: 8 }} />
+          <Line type="monotone" dataKey="sessionLength" stroke="#FFF" activeDot={{ r: 8 }} />
           </LineChart>
       </ResponsiveContainer>
 

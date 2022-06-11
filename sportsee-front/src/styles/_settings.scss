@@ -23,13 +23,13 @@ $font-2: "font-2";
 $font-3: "font-3",
 sans-serif;
 
-$color-1: #FF6060;
+$color-1: #000;
 
-$color-2: #FFFFFF;
+$color-2: #E60000;
 
-$color-3: #282c34;
+$color-3: #FBFBFB;
 
-$color-4:#F7F7F7;
+$color-4: #FF0000;
 
 $width-home : 100%;
 
@@ -61,5 +61,6 @@ li {
 
 #root {
   width: $width-home;
-  position: relative;
+  height : 100%;
+  //position: relative;
 }

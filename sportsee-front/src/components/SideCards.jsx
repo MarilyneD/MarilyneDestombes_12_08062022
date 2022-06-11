@@ -7,7 +7,7 @@ const SideCards = ({ keydata }) => {
   return (
     <ul className="sidecards">
       {Object.entries(keydata).map((item, index) => (
-        <Card item={item} index={index} />
+        <Card key={index} item={item} index={index} />
       ))}
     </ul>
   );

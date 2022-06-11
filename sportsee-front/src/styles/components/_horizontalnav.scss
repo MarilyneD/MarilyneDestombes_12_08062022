@@ -1,10 +1,12 @@
 .horizontal-navigation{display :flex;
-
+    position:fixed ;
+    width : 100%;
 flex-direction: row;
 height : 95px;
 color: #FFF;
 
 background-color: black;
+align-items: center;
 
 ul{padding-left: 200px;
     display : flex;

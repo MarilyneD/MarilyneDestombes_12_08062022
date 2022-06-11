@@ -24,12 +24,12 @@ const ScoreChart = ({maindata}) => {
   const data = [
     {
       name: '100%',
-      uv: 1,
+      percentage: 1,
       fill: '#FFF',
     },
     {
       name: 'user',
-        uv: maindata.todayScore,
+        percentage: maindata.todayScore,
       fill: '#83a6ed',
     },
     
@@ -40,14 +40,15 @@ const ScoreChart = ({maindata}) => {
 
     return (
         
-      <ResponsiveContainer className="score" width="100%" height="100%">
+      <ResponsiveContainer className="score" width="100%" aspect={1.5}>
       <RadialBarChart cx="50%" cy="50%" innerRadius="60%" outerRadius="80%" barSize={10} data={data}>
         <RadialBar
           minAngle={0}
-          label={{ position: 'insideStart', fill: '#fff' }}
-          background
+          label={{ position: 'insideStart', fill: '#E60000' }}
+          // background={{ fill: '#E60000' }}
+          fill={'#E60000'}
           clockWise
-          dataKey="uv"
+          dataKey="percentage"
         />
         {/* <Legend iconSize={10} layout="vertical" verticalAlign="middle" wrapperStyle={style} /> */}
       </RadialBarChart>
