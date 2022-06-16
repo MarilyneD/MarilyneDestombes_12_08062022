@@ -29,11 +29,20 @@ const ScoreChart = ({maindata}) => {
     },
     {
       name: 'user',
-        percentage: maindata.todayScore,
+      percentage: maindata.todayScore,
       fill: '#83a6ed',
     },
     
   ];
+  const ScoreLegend = () =>{
+    return (
+      <div className='score-legend'>
+        <p className='score-legend_percentage'>{maindata.todayScore * 100}%</p>
+        <p className='score-legend_text'>de votre</p>
+        <p className='score-legend_text'>objectif</p>
+        </div>
+    )
+  }
   console.log(maindata.todayScore)
 
 
@@ -50,7 +59,7 @@ const ScoreChart = ({maindata}) => {
           clockWise
           dataKey="percentage"
         />
-        {/* <Legend iconSize={10} layout="vertical" verticalAlign="middle" wrapperStyle={style} /> */}
+        <Legend align='center' verticalAlign='middle'  content={ScoreLegend}/>
       </RadialBarChart>
     </ResponsiveContainer>
     );

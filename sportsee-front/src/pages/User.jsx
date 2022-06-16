@@ -15,6 +15,7 @@ const User = () => {
   const [activity, setActivity] = useState([]);
   const [averagesessions, setAvergagesessions] = useState([]);
   const [performance, setPerformance] = useState([]);
+  const userList = [12,18]
 
   async function getMainData() {
     const response = await axios.get("http://localhost:3000/user/" + id);
@@ -75,6 +76,7 @@ const User = () => {
   return (
     <div className="user-container">
       <div className="hello"> Bonjour {mainData.userInfos.firstName}</div>
+      <div className="message"> Félicitation ! Vous avez explosé vos objectifs hier 👏 </div>
       <div className="charts-container">
         <ActivityChart activity={activity} />
         <AverageSessionsChart averagesessions={averagesessions} />

@@ -30,7 +30,7 @@ const VerticalNav = () => {
       </li>
 
     </ul>
-    <div className="copyrigth"> Copyright, SportSee 2020</div>
+    <div className="copyright"> Copyright, SportSee 2020</div>
     </div>
   );
 };

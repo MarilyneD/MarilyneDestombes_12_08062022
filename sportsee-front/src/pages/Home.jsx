@@ -1,20 +1,19 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
-//import BannerHome from "../components/BannerHome";
-//import Rentals from "../components/Rentals";
+import UserCard from "../components/UserCard";
+
 
 const Home = () => {
+
+  const avatars =[[12,'/img/male.png'],[18,'/img/female.png']]
+
+
   return (
-    <div>
+    <div className="main-section"> 
      
      <ul>
-        <NavLink to="/user/12" className="">
-          <li>Sportif 12</li>
-        </NavLink>
-        <NavLink to="/user/18" className="">
-          <li>Sportif 18</li>
-        </NavLink>
-        </ul>
+        {avatars.map((item) => (<UserCard id={item[0]} avatar={item[1]} />) )}      
+     </ul>
 
          
 
