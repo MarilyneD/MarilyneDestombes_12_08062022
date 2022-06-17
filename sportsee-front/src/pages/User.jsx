@@ -9,7 +9,7 @@ import SideCards from "../components/SideCards";
 
 const User = () => {
   let { id } = useParams();
-  //let navigate = useNavigate();
+  let navigate = useNavigate();
 
   const [mainData, setMainData] = useState([]);
   const [activity, setActivity] = useState([]);
@@ -62,8 +62,11 @@ const User = () => {
     console.log("Performance", performance);
   }, []);
 
-  // console.log("Performance", performance)
-  // console.log("maindata", mainData)
+  useEffect(() => {
+    if (userList.includes(id)) {
+      navigate("/Notfound");
+    }
+  }, []);
 
   if (
     mainData.length === 0 ||
@@ -75,7 +78,7 @@ const User = () => {
   }
   return (
     <div className="user-container">
-      <div className="hello"> Bonjour {mainData.userInfos.firstName}</div>
+      <div className="hello"> Bonjour <div className="hello-red">{mainData.userInfos.firstName}</div></div>
       <div className="message"> Félicitation ! Vous avez explosé vos objectifs hier 👏 </div>
       <div className="charts-container">
         <ActivityChart activity={activity} />

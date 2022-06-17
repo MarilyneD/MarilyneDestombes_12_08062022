@@ -11,7 +11,7 @@ const Card = (props) => {
       
         <img src={imgInfo[props.index][0]} alt=" " /> 
         <div className='card-text'>
-        <h2>{props.item[1]+countNames[props.index][0]}</h2><br></br>
+        <h2>{props.item[1]+countNames[props.index][0]}</h2>
         <p>{countNames[props.index][1]}</p>
         </div>
     </li>

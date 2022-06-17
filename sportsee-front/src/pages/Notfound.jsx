@@ -5,7 +5,7 @@ const Notfound = () => {
   return (
     <div className="notfound">
       <div className="error">404 </div>
-      Oups! La page que vous demandez n'existe pas. <br />
+      La page que vous demandez n'existe pas. <br />
       <NavLink className="back-home" to="/">
         Retourner sur la page d'accueil
       </NavLink>
