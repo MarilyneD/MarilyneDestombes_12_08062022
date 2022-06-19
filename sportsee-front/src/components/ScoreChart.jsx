@@ -22,16 +22,16 @@ const ScoreChart = ({maindata}) => {
 
 
   const data = [
-    {
-      name: '100%',
-      percentage: 1,
-      fill: '#FFF',
-    },
+    
     {
       name: 'user',
       percentage: maindata.todayScore,
-      fill: '#83a6ed',
-    },
+      fill: '#FF0000',
+    },{
+      name: 'reference',
+      percentage: 1,
+      fill: 'transparent',
+    }
     
   ];
   const ScoreLegend = () =>{
@@ -49,16 +49,25 @@ const ScoreChart = ({maindata}) => {
 
     return (
         
-      <ResponsiveContainer className="score" width="100%" aspect={1.5}>
-      <RadialBarChart cx="50%" cy="50%" innerRadius="60%" outerRadius="80%" barSize={10} data={data}>
+      <ResponsiveContainer className="score" width="100%" height="100%">
+      <RadialBarChart cx="50%" cy="50%" innerRadius="60%" outerRadius="80%" barSize={12} data={data}
+      startAngle={200}
+      endAngle={-160}>
         <RadialBar
-          minAngle={0}
-          label={{ position: 'insideStart', fill: '#E60000' }}
-          // background={{ fill: '#E60000' }}
-          fill={'#E60000'}
           clockWise
           dataKey="percentage"
+          cornerRadius="10"
+          fill='#FFF'
+          
         />
+        <text
+            x={60}
+            y={55}
+            textAnchor="middle"
+            dominantBaseline="middle"
+          >
+            Score
+          </text>
         <Legend align='center' verticalAlign='middle'  content={ScoreLegend}/>
       </RadialBarChart>
     </ResponsiveContainer>

@@ -1,0 +1,13 @@
+
+.score {
+    grid-area: 2 / 3 / 3 / 4;
+    background-color: $color-3;
+    border-radius: 5px;
+}
+
+.score-legend {
+    @include verticalCenter;
+    display: flex;
+    flex-direction: column;
+
+}

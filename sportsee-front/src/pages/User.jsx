@@ -1,6 +1,7 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
+import { getMainData, getActivity, getSessions, getPerformance } from "../API.js";
 import ActivityChart from "../components/ActivityChart";
 import AverageSessionsChart from "../components/AverageSessionsChart";
 import PerformanceChart from "../components/PerformanceChart";
@@ -13,64 +14,55 @@ const User = () => {
 
   const [mainData, setMainData] = useState([]);
   const [activity, setActivity] = useState([]);
-  const [averagesessions, setAvergagesessions] = useState([]);
+  const [averageSessions, setAverageSessions] = useState([]);
   const [performance, setPerformance] = useState([]);
-  const userList = [12,18]
+  const userList = ['12','18']
 
-  async function getMainData() {
-    const response = await axios.get("http://localhost:3000/user/" + id);
-    return setMainData(response.data.data);
-  }
+ 
   useEffect(() => {
-    getMainData();
-  }, []);
-
-  async function getActivity() {
-    const response = await axios.get(
-      "http://localhost:3000/user/" + id + "/activity"
-    );
-    return setActivity(response.data.data.sessions);
-  }
-  useEffect(() => {
-    getActivity();
-  }, []);
-
-  async function getSessions() {
-    const response = await axios.get(
-      "http://localhost:3000/user/" + id + "/average-sessions"
-    );
-    return setAvergagesessions(response.data.data.sessions);
-  }
-  useEffect(() => {
-    getSessions();
-  }, []);
-
-  async function getPerformance() {
-    const response = await axios.get(
-      "http://localhost:3000/user/" + id + "/performance"
-    );
-    return setPerformance(response.data.data);
-  }
-  useEffect(() => {
-    getPerformance();
-  }, []);
-
-  useEffect(() => {
-    console.log("mainData", mainData);
-    console.log("sessions", averagesessions);
-    console.log("Activity", activity);
-    console.log("Performance", performance);
-  }, []);
-
-  useEffect(() => {
-    if (userList.includes(id)) {
+    if (!userList.includes(id)) {
       navigate("/Notfound");
     }
   }, []);
 
+
+  useEffect(() => {
+     (async () => {
+       const responseMainData = await getMainData(id);
+       const responseActivity = await getActivity(id);
+       const responseSessions = await getSessions(id);
+       const responsePerformance = await getPerformance(id);
+       
+       setMainData(responseMainData);
+       setActivity(responseActivity);
+       setAverageSessions(responseSessions);
+       setPerformance(responsePerformance);
+     })();
+   }, []);
+  
+
+  // async function getActivity() {
+  //   const response = await axios.get(
+  //     "http://localhost:3000/user/" + id + "/activity"
+  //   );
+  //   return setActivity(response.data.data.sessions);
+  // }
+  // useEffect(() => {
+  //   getActivity();
+  // }, []);
+
+
+  useEffect(() => {
+    console.log("mainData", mainData);
+    console.log("sessions", averageSessions);
+    console.log("Activity", activity);
+    console.log("Performance", performance);
+  }, []);
+
+
   if (
     mainData.length === 0 ||
-    averagesessions.length === 0 ||
+    averageSessions.length === 0 ||
     activity.length === 0 ||
     performance.length === 0
   ) {
@@ -82,7 +74,7 @@ const User = () => {
       <div className="message"> Félicitation ! Vous avez explosé vos objectifs hier 👏 </div>
       <div className="charts-container">
         <ActivityChart activity={activity} />
-        <AverageSessionsChart averagesessions={averagesessions} />
+        <AverageSessionsChart averagesessions={averageSessions} />
         <PerformanceChart performance={performance} />
         <ScoreChart maindata={mainData} />
         <SideCards keydata={mainData.keyData}/>

@@ -1,5 +1,4 @@
 import React from "react";
-import { NavLink } from "react-router-dom";
 import UserCard from "../components/UserCard";
 
 
@@ -12,7 +11,7 @@ const Home = () => {
     <div className="main-section"> 
      
      <ul>
-        {avatars.map((item) => (<UserCard id={item[0]} avatar={item[1]} />) )}      
+        {avatars.map((item) => (<UserCard key={item[0]} id={item[0]} avatar={item[1]} />) )}      
      </ul>
 
          

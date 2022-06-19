@@ -1,0 +1,30 @@
+
+.sidecards {
+    grid-area: 1 / 4 / 3 / 5;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    li {
+        height: 150px;
+    }
+
+
+    .card {
+        img {
+            width: 60px;
+        }
+
+        .card-text {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            row-gap: 10px;
+
+            p {
+                color: #918e8e
+            }
+        }
+    }
+}
