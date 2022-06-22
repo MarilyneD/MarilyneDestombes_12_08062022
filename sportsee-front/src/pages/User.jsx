@@ -1,7 +1,7 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
-import { getMainData, getActivity, getSessions, getPerformance } from "../API.js";
+import {getMainData,getActivity,getSessions,getPerformance } from "../API.js";
 import ActivityChart from "../components/ActivityChart";
 import AverageSessionsChart from "../components/AverageSessionsChart";
 import PerformanceChart from "../components/PerformanceChart";
@@ -16,41 +16,28 @@ const User = () => {
   const [activity, setActivity] = useState([]);
   const [averageSessions, setAverageSessions] = useState([]);
   const [performance, setPerformance] = useState([]);
-  const userList = ['12','18']
+  const userList = ["12", "18"];
 
- 
   useEffect(() => {
     if (!userList.includes(id)) {
       navigate("/Notfound");
     }
   }, []);
 
-
   useEffect(() => {
-     (async () => {
-       const responseMainData = await getMainData(id);
-       const responseActivity = await getActivity(id);
-       const responseSessions = await getSessions(id);
-       const responsePerformance = await getPerformance(id);
-       
-       setMainData(responseMainData);
-       setActivity(responseActivity);
-       setAverageSessions(responseSessions);
-       setPerformance(responsePerformance);
-     })();
-   }, []);
-  
+    (async () => {
+      const url="http://localhost:3000/user/";
+      const responseMainData = await getMainData(url,id);
+      const responseActivity = await getActivity(url,id);
+      const responseSessions = await getSessions(url,id);
+      const responsePerformance = await getPerformance(url,id);
 
-  // async function getActivity() {
-  //   const response = await axios.get(
-  //     "http://localhost:3000/user/" + id + "/activity"
-  //   );
-  //   return setActivity(response.data.data.sessions);
-  // }
-  // useEffect(() => {
-  //   getActivity();
-  // }, []);
-
+      setMainData(responseMainData);
+      setActivity(responseActivity);
+      setAverageSessions(responseSessions);
+      setPerformance(responsePerformance);
+    })();
+  }, []);
 
   useEffect(() => {
     console.log("mainData", mainData);
@@ -58,7 +45,6 @@ const User = () => {
     console.log("Activity", activity);
     console.log("Performance", performance);
   }, []);
-
 
   if (
     mainData.length === 0 ||
@@ -70,14 +56,20 @@ const User = () => {
   }
   return (
     <div className="user-container">
-      <div className="hello"> Bonjour <div className="hello-red">{mainData.userInfos.firstName}</div></div>
-      <div className="message"> Félicitation ! Vous avez explosé vos objectifs hier 👏 </div>
+      <div className="hello">
+        {" "}
+        Bonjour <div className="hello-red">{mainData.userInfos.firstName}</div>
+      </div>
+      <div className="message">
+        {" "}
+        Félicitation ! Vous avez explosé vos objectifs hier 👏{" "}
+      </div>
       <div className="charts-container">
         <ActivityChart activity={activity} />
         <AverageSessionsChart averagesessions={averageSessions} />
         <PerformanceChart performance={performance} />
         <ScoreChart maindata={mainData} />
-        <SideCards keydata={mainData.keyData}/>
+        <SideCards keydata={mainData.keyData} />
       </div>
     </div>
   );
