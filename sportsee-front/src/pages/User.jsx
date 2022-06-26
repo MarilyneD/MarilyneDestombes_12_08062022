@@ -33,18 +33,14 @@ const User = () => {
       const responsePerformance = await getPerformance(url,id);
 
       setMainData(responseMainData);
+      console.log("responseMainData",responseMainData);
       setActivity(responseActivity);
       setAverageSessions(responseSessions);
       setPerformance(responsePerformance);
     })();
   }, []);
 
-  useEffect(() => {
-    console.log("mainData", mainData);
-    console.log("sessions", averageSessions);
-    console.log("Activity", activity);
-    console.log("Performance", performance);
-  }, []);
+  
 
   if (
     mainData.length === 0 ||

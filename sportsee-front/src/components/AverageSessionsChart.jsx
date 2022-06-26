@@ -10,6 +10,25 @@ import {
   ResponsiveContainer,
 } from "recharts";
 
+
+
+const CustomTooltip = ({ active, payload, label }) => {
+  if (active) {
+    return (
+      <div className="custom-tooltip-sessions">
+        <p className="label-sessions">{` ${payload[0].value}`}min</p>
+      </div>
+    );
+  }
+
+  return null;
+};
+
+
+
+
+
+
 const AverageSessionsChart = ({ averagesessions }) => {
   const frenchDays = ["L", "M", "M", "J", "V", "S", "D"];
 
@@ -17,7 +36,7 @@ const AverageSessionsChart = ({ averagesessions }) => {
   console.log("averagesessions", averagesessions);
 
   return (
-    <ResponsiveContainer className="sessions" width="100%" aspect={1.2}>
+    <ResponsiveContainer className="sessions" width="100%" aspect={1}>
       <LineChart
         width={500}
         height={300}
@@ -42,7 +61,7 @@ const AverageSessionsChart = ({ averagesessions }) => {
           tickLine={false}
         />
         <YAxis axisLine={false} hide={true} />
-        <Tooltip />
+        <Tooltip content={<CustomTooltip />} cursor={false}/>
         <Line
           type="monotone"
           dataKey="sessionLength"
@@ -50,6 +69,9 @@ const AverageSessionsChart = ({ averagesessions }) => {
           activeDot={{ r: 4 }}
           dot={false}
         />
+        <text x={30} y={45} textAnchor="start" dominantBaseline="middle"  fill="#FFF" style={{fontSize:18}} >
+          Durée moyenne des sessions
+        </text>
       </LineChart>
     </ResponsiveContainer>
   );

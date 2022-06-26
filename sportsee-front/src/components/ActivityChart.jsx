@@ -12,6 +12,27 @@ import {
   ResponsiveContainer,
 } from "recharts";
 
+
+
+const CustomTooltip = ({ active, payload, label }) => {
+  if (active) {
+    return (
+      <div className="custom-tooltip-activity">
+        <p className="label1">{` ${payload[0].value}`}kg</p>
+        <p className="label2">{` ${payload[1].value}`}kCal</p>
+      </div>
+    );
+  }
+
+  return null;
+};
+
+
+
+
+
+
+
 const ActivityChart = ({ activity }) => {
   return (
     <ResponsiveContainer className="activity" width="100%" height="100%">
@@ -41,7 +62,7 @@ const ActivityChart = ({ activity }) => {
         />
         <YAxis yAxisId="calories" axisLine={false} tickLine={false} hide />
 
-        <Tooltip />
+        <Tooltip content={<CustomTooltip />} offset={30}   contentStyle={ { whiteSpace: 'inherit', backgroundColor: '#0000EE' } }/>
         <Legend
           className="barchart-legend"
           wrapperStyle={{ top: 35, left: 400 }}

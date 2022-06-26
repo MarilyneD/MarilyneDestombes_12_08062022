@@ -10,3 +10,17 @@
         color: "#74798C"
     }
 }
+.custom-tooltip-activity {
+    display: flex;
+    flex-direction: column;
+    @include verticalCenter;
+    justify-content: space-between;
+    margin-left: 25px;
+    width: 70px;
+    height: 300 px;
+    background-color: $color-2;
+    color: #FFF
+}
+.label1{padding: 20px 0 20px 0;}
+
+.label2{padding: 20px 0 20px 0;}
