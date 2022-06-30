@@ -33,7 +33,7 @@ const AverageSessionsChart = ({ averagesessions }) => {
   const frenchDays = ["L", "M", "M", "J", "V", "S", "D"];
 
   averagesessions.map((item, index) => (item.day = frenchDays[index]));
-  console.log("averagesessions", averagesessions);
+  console.log("averagesessions modifiées", averagesessions);
 
   return (
     <ResponsiveContainer className="sessions" width="100%" aspect={1}>

@@ -11,37 +11,47 @@ import axios from "axios";
  *
  */
 
-async function getMainData(url, id) {
-  var erroringet = false;
+async function getMainData(url, id, isMocked) {
   const response = await axios.get(url + id).catch(function (error) {
     if (error.response) {
       console.log("error.response.data", error.response.data);
-      erroringet = true;
     }
   });
-  if (erroringet) {
-    console.log("il y a une erreur");
-    return axios
-      .get("/mocked-data/getMainData.json")
-      .then((res) => console.log("res.data du mocked", res.data));
+  if (isMocked) {
+    return axios.get("/mocked-data/getMainData.json").then((res) => res.data);
   } else {
     return response.data.data;
   }
 }
 
-async function getActivity(url, id) {
+async function getActivity(url, id, isMocked) {
   const response = await axios.get(url + id + "/activity");
-  return response.data.data.sessions;
+
+  if (isMocked) {
+    return axios.get("/mocked-data/getActivity.json").then((res) => res.data);
+  } else {
+    return response.data.data.sessions;
+  }
 }
 
-async function getSessions(url, id) {
+async function getSessions(url, id, isMocked) {
   const response = await axios.get(url + id + "/average-sessions");
-  return response.data.data.sessions;
+  if (isMocked) {
+    return axios.get("/mocked-data/getSessions.json").then((res) => res.data);
+  } else {
+    return response.data.data.sessions;
+  }
 }
 
-async function getPerformance(url, id) {
+async function getPerformance(url, id, isMocked) {
   const response = await axios.get(url + id + "/performance");
-  return response.data.data;
+  if (isMocked) {
+    return axios
+      .get("/mocked-data/getPerformance.json")
+      .then((res) => res.data);
+  } else {
+    return response.data.data;
+  }
 }
 
 export { getMainData, getActivity, getSessions, getPerformance };

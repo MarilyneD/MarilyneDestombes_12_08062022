@@ -14,7 +14,7 @@ import {
 
 
 
-const CustomTooltip = ({ active, payload, label }) => {
+const CustomTooltip = ({ active, payload }) => {
   if (active) {
     return (
       <div className="custom-tooltip-activity">
@@ -65,7 +65,7 @@ const ActivityChart = ({ activity }) => {
         <Tooltip content={<CustomTooltip />} offset={30}   contentStyle={ { whiteSpace: 'inherit', backgroundColor: '#0000EE' } }/>
         <Legend
           className="barchart-legend"
-          wrapperStyle={{ top: 35, left: 400 }}
+          wrapperStyle={{ top: 35, left: 350 }}
           iconType="circle"
           formatter={(value) => {
             return <span style={{ color: "#74798C" }}>{value}</span>;

@@ -1,4 +1,3 @@
-import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import {getMainData,getActivity,getSessions,getPerformance } from "../API.js";
@@ -27,16 +26,20 @@ const User = () => {
   useEffect(() => {
     (async () => {
       const url="http://localhost:3000/user/";
-      const responseMainData = await getMainData(url,id);
-      const responseActivity = await getActivity(url,id);
-      const responseSessions = await getSessions(url,id);
-      const responsePerformance = await getPerformance(url,id);
+      const isMocked = true;
+      const responseMainData = await getMainData(url,id,isMocked);
+      const responseActivity = await getActivity(url,id,isMocked);
+      const responseSessions = await getSessions(url,id,isMocked);
+      const responsePerformance = await getPerformance(url,id,isMocked);
 
       setMainData(responseMainData);
       console.log("responseMainData",responseMainData);
       setActivity(responseActivity);
+      console.log("responseActivity",responseActivity);
       setAverageSessions(responseSessions);
+      console.log("responseSessions",responseSessions);
       setPerformance(responsePerformance);
+      console.log("responsePerformance",responsePerformance);
     })();
   }, []);
 
