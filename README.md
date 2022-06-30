@@ -4,7 +4,7 @@
 
 The site offers athletes a sports analysis dashboard presenting several graphs of their daily activities.
 This repo contains all the source code for the new user profile page of the site.
-![SportSee](/public/logo.svg)
+![SportSee](/sportsee-front/public/img/logo.svg)
 
 ---
 
