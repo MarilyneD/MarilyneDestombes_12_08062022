@@ -1,7 +1,9 @@
 # Project 12 - SportSee
 
+![N|Solid](https://badgen.net/badge/React/18.1.0/blue?icon=react) ![N|Solid](https://badgen.net/badge/npm/8.11.0/red?icon=react) ![N|Solid](https://badgen.net/badge/Sass/1.51.0/pink?icon=react) ![N|Solid](https://badgen.net/badge/Recharts/2.1.10/green?icon=react) ![N|Solid](https://badgen.net/badge/Axios/0.27.2/purple?icon=react)
 The site offers athletes a sports analysis dashboard presenting several graphs of their daily activities.
 This repo contains all the source code for the new user profile page of the site.
+![SportSee](/public/logo.svg)
 
 ---
 
@@ -12,12 +14,12 @@ This repo contains all the source code for the new user profile page of the site
 
 **Main Dependencies**
 
-    * Axios 0.27.2
-    * React 18.1.0
-    * React-dom 18.1.0
-    * React-router-dom 6.3.0
-    * Recharts 2.1.10
-    * Sass 1.51.0
+- React 18.1.0
+- React-dom 18.1.0
+- React-router-dom 6.3.0
+- Recharts 2.1.10
+- Sass 1.51.0
+- Axios 0.27.2
 
 ## How to install :
 
