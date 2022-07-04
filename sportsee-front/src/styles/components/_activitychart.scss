@@ -3,13 +3,8 @@
     grid-area: 1 / 1 / 2 / 4;
     background-color: $color-3;
     border-radius: 5px;
-
-
-
-    .barchart-legend {
-        color: "#74798C"
-    }
 }
+
 .custom-tooltip-activity {
     display: flex;
     flex-direction: column;
@@ -17,10 +12,12 @@
     justify-content: space-between;
     margin-left: 25px;
     width: 70px;
-    height: 300 px;
     background-color: $color-2;
     color: #FFF
 }
 .label1{padding: 20px 0 20px 0;}
 
 .label2{padding: 20px 0 20px 0;}
+
+
+

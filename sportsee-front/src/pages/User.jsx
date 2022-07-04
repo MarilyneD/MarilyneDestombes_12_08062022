@@ -26,7 +26,7 @@ const User = () => {
   useEffect(() => {
     (async () => {
       const url="http://localhost:3000/user/";
-      const isMocked = true;
+      const isMocked = false;
       const responseMainData = await getMainData(url,id,isMocked);
       const responseActivity = await getActivity(url,id,isMocked);
       const responseSessions = await getSessions(url,id,isMocked);

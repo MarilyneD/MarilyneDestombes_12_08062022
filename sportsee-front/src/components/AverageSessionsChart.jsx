@@ -6,8 +6,8 @@ import {
   YAxis,
   CartesianGrid,
   Tooltip,
-  Legend,
   ResponsiveContainer,
+  Text
 } from "recharts";
 
 
@@ -69,7 +69,7 @@ const AverageSessionsChart = ({ averagesessions }) => {
           activeDot={{ r: 4 }}
           dot={false}
         />
-        <text x={30} y={45} textAnchor="start" dominantBaseline="middle"  fill="#FFF" style={{fontSize:18}} >
+        <text x="10%" y="12%" textAnchor="start" dominantBaseline="middle"  fill="#FFF"  >
           Durée moyenne des sessions
         </text>
       </LineChart>

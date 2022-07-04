@@ -1,6 +1,13 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
 
+
+/**
+ * Show header
+ * @returns {JSX}
+ */
+
+
 const VerticalNav = () => {
   return (
     <div className="vertical-navigation">

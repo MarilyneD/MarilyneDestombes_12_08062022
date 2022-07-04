@@ -54,7 +54,7 @@ You can run the build and deploy scripts once work is finished.
 2. Follow the instructions of the readme.md file and then launch :
 
 ```sh
-yarn dev
+   yarn dev
 ```
 
 ### Author :

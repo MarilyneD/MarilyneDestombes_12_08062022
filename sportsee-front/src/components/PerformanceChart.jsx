@@ -21,7 +21,7 @@ const PerformanceChart = ({ performance }) => {
   performance.data.map((item, index) => (item.kind = performanceNames[index]));
 
   return (
-    <ResponsiveContainer className="performance" width="100%" aspect={0.9}>
+    <ResponsiveContainer className="performance" width="100%" height="100%" >
       <RadarChart cx="50%" cy="50%" outerRadius="75%" data={performance.data}>
         <PolarGrid radialLines={false} />
         <PolarAngleAxis
@@ -30,7 +30,7 @@ const PerformanceChart = ({ performance }) => {
           dy={5}
           tickLine={false}
           tick={{
-            fontSize: 13,
+            fontSize: "75%",
             fontWeight: 500,
           }}
         />

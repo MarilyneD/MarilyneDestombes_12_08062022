@@ -1,11 +1,18 @@
 .sessions {
-    grid-area: 2 / 1 / 3 / 2;
-    background-color: $color-2;
-    border-radius: 5px;
+  grid-area: 2 / 1 / 3 / 2;
+  background-color: $color-2;
+  border-radius: 5px;
 
-    text{opacity: 0.6;}
-  
+  text {
+    opacity: 0.6;
+  }
 }
 
-.custom-tooltip-sessions{background-color: #FFF;width : 50px;padding: 5px 0 5px 0;  @include verticalCenter;}
+.custom-tooltip-sessions {
+  background-color: #fff;
+  width: 50px;
+  padding: 5px 0 5px 0;
+  @include verticalCenter;
+}
+
 

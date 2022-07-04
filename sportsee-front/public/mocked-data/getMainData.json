@@ -2,11 +2,11 @@
     {
         "id": 12,
         "userInfos": {
-            "firstName": "Karl",
+            "firstName": "Mocked user",
             "lastName": "Dovineau",
             "age": 31
         },
-        "todayScore": 0.12,
+        "todayScore": 0.6,
         "keyData": {
             "calorieCount": 1930,
             "proteinCount": 155,
