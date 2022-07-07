@@ -16,12 +16,19 @@ const User = () => {
   const [averageSessions, setAverageSessions] = useState([]);
   const [performance, setPerformance] = useState([]);
   const userList = ["12", "18"];
+ 
+
+
+
 
   useEffect(() => {
     if (!userList.includes(id)) {
       navigate("/Notfound");
     }
   }, []);
+
+
+  
 
   useEffect(() => {
     (async () => {
@@ -42,6 +49,34 @@ const User = () => {
       console.log("responsePerformance",responsePerformance);
     })();
   }, []);
+
+  
+
+  function formatDataForRecharts() {
+    // Activity : data match perfectly, no need to modify
+    // Sessions : days key from numbers to letters 1=>L 2=>M
+    const frenchDays = ["L", "M", "M", "J", "V", "S", "D"];
+    averageSessions.map((item, index) => (item.day = frenchDays[index]));
+    // Changing performance names from english to french
+    const performanceNames = [
+      "Cardio",
+      "Energie",
+      "Endurance",
+      "Force",
+      "Vitesse",
+      "Intensité",
+    ];
+      performance.data.map((item, index) => (item.kind = performanceNames[index]));
+    // adapting score key sometimes named score or todayScore
+  if(!mainData.todayScore){console.log("Pas de clé todayScore");mainData["todayScore"]=mainData.score};
+   
+  }
+
+
+
+if(averageSessions.length>0||
+  performance.length > 0 || mainData.length > 0){
+  formatDataForRecharts()}
 
   
 
@@ -67,7 +102,7 @@ const User = () => {
         <ActivityChart activity={activity} />
         <AverageSessionsChart averagesessions={averageSessions} />
         <PerformanceChart performance={performance} />
-        <ScoreChart maindata={mainData} />
+        <ScoreChart maindata={mainData} /> 
         <SideCards keydata={mainData.keyData} />
       </div>
     </div>

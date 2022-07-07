@@ -9,17 +9,7 @@ import {
 } from "recharts";
 
 const PerformanceChart = ({ performance }) => {
-  const performanceNames = [
-    "Cardio",
-    "Energie",
-    "Endurance",
-    "Force",
-    "Vitesse",
-    "Intensité",
-  ];
-
-  performance.data.map((item, index) => (item.kind = performanceNames[index]));
-
+  
   return (
     <ResponsiveContainer className="performance" width="100%" height="100%" >
       <RadarChart cx="50%" cy="50%" outerRadius="75%" data={performance.data}>
