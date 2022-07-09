@@ -2,16 +2,23 @@ import React from "react";
 import {
   BarChart,
   Bar,
-  Cell,
   XAxis,
   YAxis,
   CartesianGrid,
   Tooltip,
   Legend,
-  Label,
   ResponsiveContainer,
 } from "recharts";
 
+
+
+
+
+
+/**
+ * Component for showing a custom tooltip of the user activity.
+ * @component
+ */
 
 const CustomTooltip = ({ active, payload }) => {
   if (active) {
@@ -25,6 +32,15 @@ const CustomTooltip = ({ active, payload }) => {
 
   return null;
 };
+
+
+
+/**
+ * Component : Shows activity chart
+ * @typedef {object} Props
+ * @property {Array} activity - The array containing weight and burnt calories for each day.
+ * @return {React.ReactElement} 
+ */
 
 
 const ActivityChart = ({ activity }) => {

@@ -4,14 +4,26 @@ import {
   RadarChart,
   PolarGrid,
   PolarAngleAxis,
-  PolarRadiusAxis,
   ResponsiveContainer,
 } from "recharts";
+
+
+
+
+/**
+ * Component : Shows average sessions chart
+ * @typedef {Object} Props
+ * @property {Object} performance - Containing two objects and one data array
+ * @property {Array} performance.data - The array containing speed, intensity, etc...
+ * @return {React.ReactElement} 
+ */
+
+
 
 const PerformanceChart = ({ performance }) => {
   
   return (
-    <ResponsiveContainer className="performance" width="100%" height="100%" >
+    <ResponsiveContainer className="performance" width="100%" aspect={1} >
       <RadarChart cx="50%" cy="50%" outerRadius="75%" data={performance.data}>
         <PolarGrid radialLines={false} />
         <PolarAngleAxis

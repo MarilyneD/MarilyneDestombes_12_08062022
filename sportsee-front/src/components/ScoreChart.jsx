@@ -1,24 +1,30 @@
-import React, { PureComponent } from "react";
+import React from "react";
 import {RadialBarChart,RadialBar,Legend,ResponsiveContainer } from "recharts";
 
-const style = {
-  top: "50%",
-  right: 0,
-  lineHeight: "50px",
-};
+// const style = {
+//   top: "50%",
+//   right: 0,
+//   lineHeight: "50px",
+// };
+
+
+
+/**
+ * Component : Shows score chart
+ * @typedef {Object} Props
+ * @property {Object} maindata - Containing multiple objects
+ * @property {Number} maindata.todayScore - The number score of the day !!!
+ * @return {React.ReactElement} 
+ */
 
 
 
 const ScoreChart = ({ maindata }) => {
  
-
-  let score =0;
-  score = maindata.todayScore;
-
   const data = [
     {
       name: "user",
-      percentage: score,
+      percentage: maindata.todayScore,
       fill: "#FF0000",
     },
     {
@@ -43,7 +49,7 @@ const ScoreChart = ({ maindata }) => {
   
 
   return (
-    <ResponsiveContainer className="score" width="100%" height="100%" >
+    <ResponsiveContainer className="score" width="100%" aspect={1} >
       <RadialBarChart
         cx="50%"
         cy="50%"
@@ -58,7 +64,6 @@ const ScoreChart = ({ maindata }) => {
       >
         
         <RadialBar
-          clockWise
           dataKey="percentage"
           cornerRadius="10"
           fill="#FFF"

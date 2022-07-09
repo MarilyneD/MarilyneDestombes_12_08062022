@@ -3,8 +3,8 @@ import { NavLink } from "react-router-dom";
 
 
 /**
- * Show header
- * @returns {JSX}
+ * Component : Shows vertical navigation bar
+ * @returns {React.ReactElement}
  */
 
 

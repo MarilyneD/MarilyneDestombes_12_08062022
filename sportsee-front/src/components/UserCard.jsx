@@ -1,5 +1,12 @@
-import React, { useState } from "react";
+import React from "react";
 import { NavLink } from "react-router-dom";
+
+
+
+/**
+ * Component : Shows available users in the home page
+ * @returns {React.ReactElement}
+ */
 
 const UserCard = (props) => {
   return (

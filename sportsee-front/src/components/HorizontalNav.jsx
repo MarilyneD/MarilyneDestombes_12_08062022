@@ -2,6 +2,16 @@ import React from "react";
 import { NavLink } from "react-router-dom";
 import Logo from "./Logo";
 
+
+
+/**
+ * Component : Shows horizontal navigation bar
+ * @returns {React.ReactElement}
+ */
+
+
+
+
 const Navigation = () => {
   return (
     <div className="horizontal-navigation">

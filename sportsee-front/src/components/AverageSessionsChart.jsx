@@ -7,12 +7,11 @@ import {
   CartesianGrid,
   Tooltip,
   ResponsiveContainer,
-  Text
 } from "recharts";
 
 
 
-const CustomTooltip = ({ active, payload, label }) => {
+const CustomTooltip = ({ active, payload }) => {
   if (active) {
     return (
       <div className="custom-tooltip-sessions">
@@ -24,6 +23,14 @@ const CustomTooltip = ({ active, payload, label }) => {
   return null;
 };
 
+
+
+/**
+ * Component : Shows average sessions chart
+ * @typedef {object} Props
+ * @property {Array} averagesessions - The array containing mean duration session for each day.
+ * @return {React.ReactElement} 
+ */
 
 
 const AverageSessionsChart = ({ averagesessions }) => {

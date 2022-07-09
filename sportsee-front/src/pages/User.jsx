@@ -8,6 +8,9 @@ import ScoreChart from "../components/ScoreChart";
 import SideCards from "../components/SideCards";
 
 const User = () => {
+
+// id is read in the navigate url link via useParam (React function)
+
   let { id } = useParams();
   let navigate = useNavigate();
 
@@ -17,10 +20,12 @@ const User = () => {
   const [performance, setPerformance] = useState([]);
   const userList = ["12", "18"];
  
-
-
-
-
+/**
+ * Redirects to the Notfound if users does not exists
+ * useEffets is needed to avoid multiple relaunch of the included function.
+ * Indeed Reacts could make infinite loops without this Hook.
+ * id is a string containing the number relative to the user, it comes from url read by useParams()
+ */
   useEffect(() => {
     if (!userList.includes(id)) {
       navigate("/Notfound");
@@ -28,8 +33,20 @@ const User = () => {
   }, []);
 
 
-  
+/**
+ * @const {String} url  endpoint of the backend
+ */
 
+/**
+ *  @const {String} id  the number relative to the user, it comes from url read by useParams()
+ */
+
+/**
+ * @const {Boolean} isMocked  true to use the local backend mocked files, user name : Mocked user 
+ */
+
+
+ 
   useEffect(() => {
     (async () => {
       const url="http://localhost:3000/user/";
@@ -51,6 +68,12 @@ const User = () => {
   }, []);
 
   
+
+ /**
+  * @function formatDataForRecharts
+  * makes the data compatible with Recharts library for each kind of chart.
+  */
+
 
   function formatDataForRecharts() {
     // Activity : data match perfectly, no need to modify

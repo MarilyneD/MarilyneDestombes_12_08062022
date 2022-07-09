@@ -1,5 +1,16 @@
 import React from "react";
 
+
+
+/**
+ * Component : Shows average sessions chart
+ * @typedef {object} Props - item is key value pair and index concerns the position in the map loop
+ * @return {React.ReactElement} 
+ * 
+ */
+
+
+
 const Card = (props) => {
   const countNames = [
     ["kCal", "Calories"],
@@ -16,7 +27,7 @@ const Card = (props) => {
 
   return (
     <li className="card">
-      <img src={imgInfo[props.index][0]} alt=" " />
+      <img src={imgInfo[props.index][0]} alt={imgInfo[props.index][1]} />
       <div className="card-text">
         <h2>{props.item[1] + countNames[props.index][0]}</h2>
         <p>{countNames[props.index][1]}</p>
