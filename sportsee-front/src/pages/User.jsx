@@ -76,11 +76,11 @@ const User = () => {
 
 
   function formatDataForRecharts() {
-    // Activity : data match perfectly, no need to modify
-    // Sessions : days key from numbers to letters 1=>L 2=>M
+    // Activity (bar chart) : data match perfectly, no need to modify
+    // Sessions (line chart) : days key from numbers to letters 1=>L 2=>M
     const frenchDays = ["L", "M", "M", "J", "V", "S", "D"];
     averageSessions.map((item, index) => (item.day = frenchDays[index]));
-    // Changing performance names from english to french
+    // Performance (radar chart) : changing names from english to french
     const performanceNames = [
       "Cardio",
       "Energie",
@@ -90,7 +90,7 @@ const User = () => {
       "Intensité",
     ];
       performance.data.map((item, index) => (item.kind = performanceNames[index]));
-    // adapting score key sometimes named score or todayScore
+    // Score (radial chart) : adapting score key sometimes named score or todayScore
   if(!mainData.todayScore){console.log("Pas de clé todayScore");mainData["todayScore"]=mainData.score};
    
   }

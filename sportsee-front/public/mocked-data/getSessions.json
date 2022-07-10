@@ -5,27 +5,27 @@
           },
           {
               "day": 2,
-              "sessionLength": 23
+              "sessionLength": 48
           },
           {
               "day": 3,
-              "sessionLength": 45
+              "sessionLength": 20
           },
           {
               "day": 4,
-              "sessionLength": 50
+              "sessionLength": 46
           },
           {
               "day": 5,
-              "sessionLength": 0
+              "sessionLength": 20
           },
           {
               "day": 6,
-              "sessionLength": 0
+              "sessionLength": 46
           },
           {
               "day": 7,
-              "sessionLength": 60
+              "sessionLength": 24
           }
       ]
  
