@@ -1,11 +1,26 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import {getMainData,getActivity,getSessions,getPerformance } from "../API.js";
+import PropTypes from 'prop-types';
 import ActivityChart from "../components/ActivityChart";
 import AverageSessionsChart from "../components/AverageSessionsChart";
 import PerformanceChart from "../components/PerformanceChart";
 import ScoreChart from "../components/ScoreChart";
 import SideCards from "../components/SideCards";
+
+
+/**
+ * @const {String} url  endpoint of the backend
+ */
+
+/**
+ *  @const {String} id  the number relative to the user, it comes from url read by useParams()
+ */
+
+/**
+ * @const {Boolean} isMocked  true to use the local backend mocked files, user name : Mocked user 
+ */
+
 
 const User = () => {
 
@@ -32,31 +47,17 @@ const User = () => {
     }
   }, []);
 
-
-/**
- * @const {String} url  endpoint of the backend
- */
-
-/**
- *  @const {String} id  the number relative to the user, it comes from url read by useParams()
- */
-
-/**
- * @const {Boolean} isMocked  true to use the local backend mocked files, user name : Mocked user 
- */
-
-
  
   useEffect(() => {
     (async () => {
       const url="http://localhost:3000/user/";
-      const isMocked = false;
+      const isMocked = true;
       const responseMainData = await getMainData(url,id,isMocked);
       const responseActivity = await getActivity(url,id,isMocked);
       const responseSessions = await getSessions(url,id,isMocked);
       const responsePerformance = await getPerformance(url,id,isMocked);
 
-      setMainData(responseMainData);
+      setMainData(responseMainData); // setMainData is a useState hook to save responseData 
       console.log("responseMainData",responseMainData);
       setActivity(responseActivity);
       console.log("responseActivity",responseActivity);
@@ -131,5 +132,40 @@ if(averageSessions.length>0||
     </div>
   );
 };
+
+
+
+
+
+
+
+// Props types
+// keydata is an object inside the object maindata, keydata=maindata.keyData
+
+
+ActivityChart.propTypes = {
+  activity: PropTypes.array.isRequired,
+}
+
+AverageSessionsChart.propTypes = {
+  averagesessions: PropTypes.array.isRequired,
+}
+
+PerformanceChart.propTypes = {
+  performance: PropTypes.object.isRequired,
+}
+
+ScoreChart.propTypes = {
+  maindata: PropTypes.object.isRequired,
+}
+
+SideCards.propTypes = {
+  keydata: PropTypes.object.isRequired,
+}
+
+
+
+
+
 
 export default User;

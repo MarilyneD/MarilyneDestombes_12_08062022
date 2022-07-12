@@ -1,6 +1,6 @@
 import React from "react";
+import PropTypes from 'prop-types';
 import Card from "./Card";
-
 
 
 
@@ -10,6 +10,8 @@ import Card from "./Card";
  * @param {Object} params.keydata  key value pairs, calorie count, protein count, etc...
  * @return {React.ReactElement} 
  */
+
+// Object.entries transforme l'objet keydata en Array
 
 const SideCards = ({ keydata }) => {
 
@@ -21,5 +23,15 @@ const SideCards = ({ keydata }) => {
     </ul>
   );
 };
+
+
+
+// Props types
+// keydata is an object inside the object maindata, keydata=maindata.keyData
+SideCards.propTypes = {
+  keydata: PropTypes.object.isRequired,
+}
+
+
 
 export default SideCards;

@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from 'prop-types'
 import {
   BarChart,
   Bar,
@@ -12,12 +13,8 @@ import {
 
 
 
-
-
-
 /**
- * Component for showing a custom tooltip of the user activity.
- * @component
+ * @component Component for showing a custom tooltip of the user activity.
  */
 
 const CustomTooltip = ({ active, payload }) => {
@@ -32,6 +29,7 @@ const CustomTooltip = ({ active, payload }) => {
 
   return null;
 };
+
 
 
 
@@ -105,5 +103,23 @@ const ActivityChart = ({ activity }) => {
     </ResponsiveContainer>
   );
 };
+
+
+
+
+// Props types
+ActivityChart.propTypes = {
+  activity: PropTypes.array.isRequired,
+}
+
+
+// Props types
+CustomTooltip.propTypes = {
+  active: PropTypes.bool,
+  payload: PropTypes.array,
+}
+
+
+
 
 export default ActivityChart;

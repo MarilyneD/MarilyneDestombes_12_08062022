@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from 'prop-types';
 import {RadialBarChart,RadialBar,Legend,ResponsiveContainer } from "recharts";
 
 // const style = {
@@ -76,5 +77,13 @@ const ScoreChart = ({ maindata }) => {
     </ResponsiveContainer>
   );
 };
+
+
+
+// Props types
+ScoreChart.propTypes = {
+  maindata: PropTypes.object.isRequired,
+}
+
 
 export default ScoreChart;

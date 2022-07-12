@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from 'prop-types';
 import {
   LineChart,
   Line,
@@ -76,5 +77,22 @@ const AverageSessionsChart = ({ averagesessions }) => {
     </ResponsiveContainer>
   );
 };
+
+
+
+// Props types
+AverageSessionsChart.propTypes = {
+  averagesessions: PropTypes.array.isRequired,
+}
+
+
+// Props types
+CustomTooltip.propTypes = {
+  active: PropTypes.bool,
+  payload: PropTypes.array,
+}
+
+
+
 
 export default AverageSessionsChart;
